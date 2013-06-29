@@ -1,0 +1,29 @@
+[
+	{
+		'logotypeURL': 'http://www.greenliter.com/wp-content/uploads/2011/05/190px-Google_G.svg_.png',
+		'firstLetter': 'g',
+		'matches': ['google'],
+		'backgroundColor': '#ffffff'
+	},
+
+	{
+		'logotypeURL': 'http://www.clusta.com/Media/Default/Photos/kelloggs-01-large.jpg',
+		'firstLetter': 'k',
+		'matches': ['kellogs', 'kellog\'s'],
+		'backgroundColor': '#d7040b'
+	},
+
+	{
+		'logotypeURL': 'http://images2.wikia.nocookie.net/__cb20100724074135/logopedia/images/thumb/c/c8/Disney_D.svg/585px-Disney_D.svg.png',
+		'firstLetter': 'D',
+		'matches': ['disney'],
+		'backgroundColor': '#eeeeee'
+	},
+
+	{
+		'logotypeURL': 'http://www.logosdatabase.com/logoimages/77462655.jpg',
+		'firstLetter': 'G',
+		'matches': ['gillette'],
+		'backgroundColor': '#cccccc'
+	}
+]
