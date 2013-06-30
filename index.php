@@ -30,6 +30,8 @@
 	<div class="container">
 		<h1 class="align-center" timer countdown="60" interval="1000">{{ countdown }}</h1>
 
+		<button class="btn btn-large btn-inverse pull-right" ng-click="forward()">Saltar</button>
+
 		<div id="logotype" class="align-center">
 			<img ng-src="{{ brands[index].logotypeURL }}">
 		</div>

@@ -7,7 +7,7 @@
 	},
 
 	{
-		'logotypeURL': 'http://www.clusta.com/Media/Default/Photos/kelloggs-01-large.jpg',
+		'logotypeURL': 'static/img/k-1.jpg',
 		'firstLetter': 'k',
 		'matches': ['kellogs', 'kellog\'s'],
 		'backgroundColor': '#d7040b'

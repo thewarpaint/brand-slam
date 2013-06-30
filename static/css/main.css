@@ -58,6 +58,15 @@ html, body {
 	border-width: 4px;
 	box-sizing: border-box;
 	text-align: center;
+	/*border-color: #2C3E50; /* @midnight-blue; */
+	/*border-color: #34495E; /* @wet-asphalt; */
+	border-color: #BDC3C7; /* @silver; */
+
+}
+
+#guess:focus {
+	/*border-color: #1ABC9C; /* @	turquoise; */
+	border-color: #1ABC9C; /* @	turquoise; */
 }
 
 #logotype {

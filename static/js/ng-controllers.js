@@ -4,16 +4,16 @@ angular.module('brandSlam').controller('BrandSlamCtrl', ['$scope', '$http', 'ima
 		//$scope.brands = $http.get('brands.json');
 		$scope.brands = [
 			{
-				'logotypeURL': 'http://www.greenliter.com/wp-content/uploads/2011/05/190px-Google_G.svg_.png',
+				'logotypeURL': 'static/img/g-1.png',
 				'firstLetter': 'g',
 				'matches': ['google'],
 				'style': {
-					'backgroundColor': '#ffffff'
+					'backgroundColor': '#0860a8'
 				}
 			},
 
 			{
-				'logotypeURL': 'http://www.clusta.com/Media/Default/Photos/kelloggs-01-large.jpg',
+				'logotypeURL': 'static/img/k-1.png',
 				'firstLetter': 'k',
 				'matches': ['kellogs', 'kellog\'s'],
 				'style': {
@@ -22,31 +22,103 @@ angular.module('brandSlam').controller('BrandSlamCtrl', ['$scope', '$http', 'ima
 			},
 
 			{
-				'logotypeURL': 'http://images2.wikia.nocookie.net/__cb20100724074135/logopedia/images/thumb/c/c8/Disney_D.svg/585px-Disney_D.svg.png',
+				'logotypeURL': 'static/img/d-1.png',
 				'firstLetter': 'D',
 				'matches': ['disney'],
 				'style': {
-					'backgroundColor': '#eeeeee'
+					'backgroundColor': '#dde1e0'
 				}
 			},
 
 			{
+				'logotypeURL': 'static/img/c-2.png',
+				'firstLetter': 'C',
+				'matches': ['coca-cola', 'coca cola'],
+				'style': {
+					'backgroundColor': '#e61e2b'
+				}
+			},
+
+			{
+				'logotypeURL': 'static/img/h-1.png',
+				'firstLetter': 'H',
+				'matches': ['hp', 'hewlett-packard', 'hewlett packard'],
+				'style': {
+					'backgroundColor': '#1a4c95'
+				}
+			},
+
+			{
+				'logotypeURL': 'static/img/m-1.png',
+				'firstLetter': 'M',
+				'matches': ['m&m'],
+				'style': {
+					'backgroundColor': '#ffffff'
+				}
+			},
+
+			{
+				'logotypeURL': 'static/img/d-2.png',
+				'firstLetter': 'D',
+				'matches': ['dhl'],
+				'style': {
+					'backgroundColor': '#ffcc00'
+				}
+			},
+
+			{
+				'logotypeURL': 'static/img/c-1.png',
+				'firstLetter': 'C',
+				'matches': ['corona'],
+				'style': {
+					'backgroundColor': '#ffffff'
+				}
+			},
+
+			{
+				'logotypeURL': 'static/img/k-2.png',
+				'firstLetter': 'K',
+				'matches': ['kfc', 'kentucky fried chicken'],
+				'style': {
+					'backgroundColor': '#c41230'
+				}
+			},
+
+			{
+				'logotypeURL': 'static/img/n-1.png',
+				'firstLetter': 'N',
+				'matches': ['nestle', 'nestlé'],
+				'style': {
+					'backgroundColor': '#ffffff'
+				}
+			},
+
+			{
+				'logotypeURL': 'static/img/g-2.png',
+				'firstLetter': 'G',
+				'matches': ['gandhi'],
+				'style': {
+					'backgroundColor': '#f8ea01'
+				}
+			},
+
+			{
+				'logotypeURL': 'static/img/w-1.png',
+				'firstLetter': 'W',
+				'matches': ['wilson'],
+				'style': {
+					'backgroundColor': '#ffffff'
+				}
+			}
+
+			/*{
 				'logotypeURL': 'http://www.logosdatabase.com/logoimages/77462655.jpg',
 				'firstLetter': 'G',
 				'matches': ['gillette'],
 				'style': {
 					'backgroundColor': '#cccccc'
 				}
-			},
-
-			{
-				'logotypeURL': 'http://img0.etsystatic.com/000/0/6712875/il_570xN.305357628.jpg',
-				'firstLetter': 'C',
-				'matches': ['corona'],
-				'style': {
-					'backgroundColor': '#cccccc'
-				}
-			}
+			},*/
 		];
 
 		$scope.getBrandsSuccess = function() {
@@ -71,8 +143,6 @@ angular.module('brandSlam').controller('BrandSlamCtrl', ['$scope', '$http', 'ima
 
 		$scope.init = function() {
 			$scope.guess = $scope.brands[$scope.index].firstLetter.toUpperCase();
-
-			$scope.getBrandsSuccess();
 		};
 
 		$scope.$watch('guess', function() {
@@ -88,4 +158,5 @@ angular.module('brandSlam').controller('BrandSlamCtrl', ['$scope', '$http', 'ima
 		});
 
 		$scope.init();
+		$scope.getBrandsSuccess();
 	}]);
