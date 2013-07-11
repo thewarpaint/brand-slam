@@ -1,0 +1,32 @@
+<div id="wrap">
+	<div class="container">
+		<div id="top">
+			<div id="score">
+				<span><i class="icon-ok"></i> {{ hits }}</span>
+				<span><i class="icon-remove"></i> {{ mistakes }}</span>
+			</div>
+
+			<div class="align-center">
+				<h1 countdown from="from" running="running">{{minutes}}:{{ seconds }}</h1>
+			</div>
+
+			<div>
+				<button class="btn btn-primary pull-right" ng-click="skip()" ng-show="running"><i class="icon-forward"></i></button>
+			</div>
+		</div>
+
+		<div id="logotype" class="align-center">
+			<img ng-src="{{ brands[index].logotypeURL }}">
+		</div>
+	</div>
+
+	<div id="push"></div>
+</div> <!-- #wrap -->
+
+<div id="footer">
+	<div class="container"><!-- only with #guess.span12 -->
+		<form id="guess-form">
+			<input type="text" id="guess" ng-model="guess" ng-show="running" class="span12" autofocus><!-- .span12 vs .input-block -->
+		</form>
+	</div>
+</div>

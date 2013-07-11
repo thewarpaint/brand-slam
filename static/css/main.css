@@ -1,4 +1,4 @@
-body {
+body#game {
 	-moz-transition: background-color 0.5s;
     -webkit-transition: background-color 0.5s;
     -o-transition: background-color 0.5s;
@@ -6,7 +6,7 @@ body {
 }
 
 /* sticky footer { */
-html, body {
+html, body#game {
 	height: 100%;
 	/* The html and body elements cannot have any padding or margin. */
 }
@@ -47,7 +47,6 @@ html, body {
 }*/
 /* sticky footer } */
 
-
 #guess-form, #guess {
 	margin-bottom: 0px;
 }
@@ -86,3 +85,87 @@ html, body {
 .align-center {
 	text-align: center;
 }
+
+#top {
+	background-color: rgba(44, 62, 80, 0.9);
+	color: #ffffff;
+}
+
+/* home */
+#home, #home .hero-unit {
+	/*background-color: #c0392b; /* @pomegranate; */
+	background-color: #2C3E50; /* @midnight-blue; */
+	
+}
+
+#home .hero-unit {
+	color: #ffffff;
+	text-align: center;
+}
+
+#home .hero-unit h1 {
+	font-size: 92px;
+}
+
+#home .hero-unit .lead {
+	font-size: 48px;
+	line-height: 60px;
+}
+
+#home .hero-unit .row-fluid:last-child {
+	margin-top: 20px;
+}
+
+@media (max-width: 767px) {
+#home .hero-unit h1 {
+	font-size: 76px;
+}
+
+#home .hero-unit .lead {
+	font-size: 32px;
+}
+}
+
+#top {
+	border-radius: 0px 0px 12px 12px;
+}
+
+#top > div {
+	width: 33%;
+	display: inline-block;
+}
+
+#top i {
+	font-size: 36px;
+}
+
+#top button {
+	position: relative;
+	top: 9px;
+	right: 15px;
+	padding: 6px 7px 6px 12px;
+}
+
+#top button i {
+	font-size: 32px;
+}
+
+#top h1 {
+	display: inline-block;
+	margin: 0px;
+	line-height: 70px;
+}
+
+#score span {
+	font-size: 32px;
+	margin-left: 20px;
+}
+
+.icon-ok {
+	color: #2ecc71;
+}
+
+.icon-remove {
+	color: #e74c3c;
+}
+/* home */

@@ -1,29 +1,109 @@
 [
 	{
-		'logotypeURL': 'http://www.greenliter.com/wp-content/uploads/2011/05/190px-Google_G.svg_.png',
+		'logotypeURL': 'static/img/g-1.png',
 		'firstLetter': 'g',
 		'matches': ['google'],
-		'backgroundColor': '#ffffff'
+		'style': {
+			'backgroundColor': '#0860a8'
+		}
 	},
 
 	{
-		'logotypeURL': 'static/img/k-1.jpg',
+		'logotypeURL': 'static/img/k-1.png',
 		'firstLetter': 'k',
 		'matches': ['kellogs', 'kellog\'s'],
-		'backgroundColor': '#d7040b'
+		'style': {
+			'backgroundColor': '#d7040b'
+		}
 	},
 
 	{
-		'logotypeURL': 'http://images2.wikia.nocookie.net/__cb20100724074135/logopedia/images/thumb/c/c8/Disney_D.svg/585px-Disney_D.svg.png',
+		'logotypeURL': 'static/img/d-1.png',
 		'firstLetter': 'D',
 		'matches': ['disney'],
-		'backgroundColor': '#eeeeee'
+		'style': {
+			'backgroundColor': '#dde1e0'
+		}
 	},
 
 	{
-		'logotypeURL': 'http://www.logosdatabase.com/logoimages/77462655.jpg',
+		'logotypeURL': 'static/img/c-2.png',
+		'firstLetter': 'C',
+		'matches': ['coca-cola', 'coca cola'],
+		'style': {
+			'backgroundColor': '#e61e2b'
+		}
+	},
+
+	{
+		'logotypeURL': 'static/img/h-1.png',
+		'firstLetter': 'H',
+		'matches': ['hp', 'hewlett-packard', 'hewlett packard'],
+		'style': {
+			'backgroundColor': '#1a4c95'
+		}
+	},
+
+	{
+		'logotypeURL': 'static/img/m-1.png',
+		'firstLetter': 'M',
+		'matches': ['m&m'],
+		'style': {
+			'backgroundColor': '#ffffff'
+		}
+	},
+
+	{
+		'logotypeURL': 'static/img/d-2.png',
+		'firstLetter': 'D',
+		'matches': ['dhl'],
+		'style': {
+			'backgroundColor': '#ffcc00'
+		}
+	},
+
+	{
+		'logotypeURL': 'static/img/c-1.png',
+		'firstLetter': 'C',
+		'matches': ['corona'],
+		'style': {
+			'backgroundColor': '#ffffff'
+		}
+	},
+
+	{
+		'logotypeURL': 'static/img/k-2.png',
+		'firstLetter': 'K',
+		'matches': ['kfc', 'kentucky fried chicken'],
+		'style': {
+			'backgroundColor': '#c41230'
+		}
+	},
+
+	{
+		'logotypeURL': 'static/img/n-1.png',
+		'firstLetter': 'N',
+		'matches': ['nestle', 'nestlé'],
+		'style': {
+			'backgroundColor': '#ffffff'
+		}
+	},
+
+	{
+		'logotypeURL': 'static/img/g-2.png',
 		'firstLetter': 'G',
-		'matches': ['gillette'],
-		'backgroundColor': '#cccccc'
+		'matches': ['gandhi'],
+		'style': {
+			'backgroundColor': '#f8ea01'
+		}
+	},
+
+	{
+		'logotypeURL': 'static/img/w-1.png',
+		'firstLetter': 'W',
+		'matches': ['wilson'],
+		'style': {
+			'backgroundColor': '#ffffff'
+		}
 	}
 ]

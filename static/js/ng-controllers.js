@@ -1,8 +1,20 @@
-angular.module('brandSlam').controller('BrandSlamCtrl', ['$scope', '$http', 'imageService', function($scope, $http, imageService) {
-		$scope.index = 0;
+angular.module('brandSlam').controller('GameCtrl', ['$scope', '$http', '$rootScope', 'imageService', function($scope, $http, $rootScope, imageService) {
+		$rootScope.view = 'game';
+		$rootScope.index = 0;
+
+		$scope.from = 60;
+		$scope.running = true;
+		$scope.hits = 0;
+		$scope.mistakes = 0;
+
+		$scope.countdownMap = {
+			'*': '',
+			'15': 'countdown-orange', //#E67E22
+			'5': 'countdown-red' //#E74C3C
+		};
 
 		//$scope.brands = $http.get('brands.json');
-		$scope.brands = [
+		$rootScope.brands = [
 			{
 				'logotypeURL': 'static/img/g-1.png',
 				'firstLetter': 'g',
@@ -109,46 +121,156 @@ angular.module('brandSlam').controller('BrandSlamCtrl', ['$scope', '$http', 'ima
 				'style': {
 					'backgroundColor': '#ffffff'
 				}
-			}
+			},
 
-			/*{
-				'logotypeURL': 'http://www.logosdatabase.com/logoimages/77462655.jpg',
+			{
+				'logotypeURL': 'static/img/t-1.png',
+				'firstLetter': 'T',
+				'matches': ['telcel'],
+				'style': {
+					'backgroundColor': '#0a3d7e'
+				}
+			},
+
+			{
+				'logotypeURL': 'static/img/s-1.png',
+				'firstLetter': 'S',
+				'matches': ['sanborns', 'sanborn\'s'],
+				'style': {
+					'backgroundColor': '#ed1b24'
+				}
+			},
+
+			{
+				'logotypeURL': 'static/img/f-1.png',
+				'firstLetter': 'F',
+				'matches': ['ford'],
+				'style': {
+					'backgroundColor': '#193976'
+				}
+			},
+
+			{
+				'logotypeURL': 'static/img/v-1.png',
+				'firstLetter': 'V',
+				'matches': ['visa'],
+				'style': {
+					'backgroundColor': '#ffffff'
+				}
+			},
+
+			{
+				'logotypeURL': 'static/img/a-1.png',
+				'firstLetter': 'A',
+				'matches': ['adidas'],
+				'style': {
+					'backgroundColor': '#ffffff'
+				}
+			},
+
+			{
+				'logotypeURL': 'static/img/l-1.png',
+				'firstLetter': 'L',
+				'matches': ['lego'],
+				'style': {
+					'backgroundColor': '#ed0512'
+				}
+			},
+
+			{
+				'logotypeURL': 'static/img/y-1.png',
+				'firstLetter': 'Y',
+				'matches': ['yahoo'],
+				'style': {
+					'backgroundColor': '#640f6c'
+				}
+			},
+
+			{
+				'logotypeURL': 'static/img/i-1.png',
+				'firstLetter': 'I',
+				'matches': ['intel'],
+				'style': {
+					'backgroundColor': '#ffffff'
+				}
+			},
+
+			{
+				'logotypeURL': 'static/img/c-3.png',
+				'firstLetter': 'C',
+				'matches': ['canon'],
+				'style': {
+					'backgroundColor': '#ffffff'
+				}
+			},
+
+			{
+				'logotypeURL': 'static/img/i-2.png',
+				'firstLetter': 'I',
+				'matches': ['ibm'],
+				'style': {
+					'backgroundColor': '#232425'
+				}
+			},
+
+			{
+				'logotypeURL': 'static/img/g-3.png',
 				'firstLetter': 'G',
 				'matches': ['gillette'],
 				'style': {
-					'backgroundColor': '#cccccc'
+					'backgroundColor': '#013b84'
 				}
-			},*/
+			}
+
+
+			//{
+			//	'logotypeURL': 'http://www.logosdatabase.com/logoimages/77462655.jpg',
+			//	'firstLetter': 'G',
+			//	'matches': ['gillette'],
+			//	'style': {
+			//		'backgroundColor': '#cccccc'
+			//	}
+			//}
 		];
 
 		$scope.getBrandsSuccess = function() {
-			var images = _.map($scope.brands, function(brand) { return brand.logotypeURL; });
+			var images = _.map($rootScope.brands, function(brand) { return brand.logotypeURL; });
 
 			imageService.prefetch(images).then(function() { console.log('ready!') });
 		};
 
+		$scope.hit = function() {
+			$scope.hits++;
+			$scope.forward();
+		};
+
+		$scope.skip = function() {
+			$scope.mistakes++;
+			$scope.forward();
+		};
+
 		$scope.forward = function() {
-			if($scope.index < $scope.brands.length - 1) {
-				$scope.index++;
+			if($rootScope.index < $rootScope.brands.length - 1) {
+				$rootScope.index++;
 				$scope.init();
 			}
 		};
 
 		$scope.back = function() {
-			if($scope.index > 0) {
-				$scope.index--;
+			if($rootScope.index > 0) {
+				$rootScope.index--;
 				$scope.init();
 			}
 		};
 
 		$scope.init = function() {
-			$scope.guess = $scope.brands[$scope.index].firstLetter.toUpperCase();
+			$scope.guess = $rootScope.brands[$rootScope.index].firstLetter.toUpperCase();
 		};
 
 		$scope.$watch('guess', function() {
-			if($scope.brands[$scope.index]) {
-				if($scope.brands[$scope.index].matches.indexOf($scope.guess.toLowerCase()) != -1) {
-					$scope.forward();
+			if($rootScope.brands[$rootScope.index]) {
+				if($rootScope.brands[$rootScope.index].matches.indexOf($scope.guess.toLowerCase()) != -1) {
+					$scope.hit();
 				}
 			}
 		});
@@ -159,4 +281,8 @@ angular.module('brandSlam').controller('BrandSlamCtrl', ['$scope', '$http', 'ima
 
 		$scope.init();
 		$scope.getBrandsSuccess();
+	}]);
+
+angular.module('brandSlam').controller('HomeCtrl', ['$scope', '$rootScope', function($scope, $rootScope) {
+		$rootScope.view = 'home';
 	}]);
